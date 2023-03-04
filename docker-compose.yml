@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+
+  mosquitto:
+    container_name: rcs-broker
+    image: eclipse-mosquitto:2
+    restart: always
+    volumes:
+      - ./config/:/mosquitto/config/
+      - ./log/:/mosquitto/log/
+      - ./data:/mosquitto/data/
+    ports:
+      - 1883:1883
+      - 9001:9001
+
+  ## TODO: Add docker execution for launching the python server
+  # server:
+  #   container_name: rcs-server
+  #   image: continuumio/miniconda3
