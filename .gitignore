@@ -131,3 +131,4 @@ dmypy.json
 
 # MQTT Broker Docker Locations
 log/
+data/
