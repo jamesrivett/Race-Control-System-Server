@@ -5,6 +5,8 @@ services:
   mosquitto:
     container_name: rcs-broker
     image: eclipse-mosquitto:2
+    tty: true
+    stdin_open: true
     restart: always
     volumes:
       - ./config/:/mosquitto/config/
