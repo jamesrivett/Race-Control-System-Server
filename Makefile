@@ -8,14 +8,17 @@ INCLUDE := include
 LIBRARIES   :=
 EXECUTABLE  := Server
 
+# created target var for more clear execution
+TARGET := $(BIN)/$(EXECUTABLE)
 
-all: $(BIN)/$(EXECUTABLE)
+
+all: $(TARGET)
 
 run: clean all
 	clear
-	./$(BIN)/$(EXECUTABLE)
+	./$(TARGET)
 
-$(BIN)/$(EXECUTABLE): $(SRC)/*.cpp
+$(TARGET): $(SRC)/*.cpp
 	$(CXX) $(CXX_FLAGS) -I$(INCLUDE) $^ -o $@ $(LIBRARIES)
 
 clean:

@@ -1,4 +1,4 @@
-#include "RCS.h"
+#include "RCS.hpp"
 
 namespace RCS
 {

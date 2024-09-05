@@ -2,7 +2,7 @@
 #include <string>
 #include <algorithm>
 // #include "mosquitto_broker.h"
-#include "RCS.h"
+#include "RCS.hpp"
 
 using namespace std;
 
@@ -16,10 +16,12 @@ int main()
     Track::Track track = controller.get_track();
 
     cout << "Start\n";
-    std::vector<Track::Sector*> sectors = track.get_sectors();
+    std::vector<Track::Sector> sectors = track.get_sectors();
+    sectors.at(2).set_flag(Track::Flag::green);
+
     for (int iter = 0; iter < sectors.size(); iter++)
     {
-        std::cout << "Sector " << Track::get_flag_str(*sectors.at(iter)) << ";\n";
+        std::cout << "Sector " << Track::get_flag_str(sectors.at(iter)) << ";\n";
     };
     cout << "End\n";
 

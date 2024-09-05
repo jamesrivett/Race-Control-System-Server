@@ -21,32 +21,32 @@ namespace Track
     class Sector
     {
     private:
-        uint8_t m_id;
+        int m_id;
         Flag m_flag;
 
     public:
         Sector();
-        explicit Sector(uint8_t id);
+        explicit Sector(int id);
         void set_flag(Flag new_flag);
-        Flag get_flag();
+        Flag get_flag() const;
     };
 
     class Track
     {
     private:
         Flag m_track_flag;
-        std::vector<Sector*> m_sectors;
+        std::vector<Sector> m_sectors;
 
     public:
         Track();
-        explicit Track(uint8_t sector_count);
-        std::vector<Sector*> get_sectors();
-        Flag get_flag();
+        explicit Track(int sector_count);
+        std::vector<Sector> get_sectors() const;
+        Flag get_flag() const;
     };
 
-    std::string get_flag_str(Flag flag);
-    std::string get_flag_str(Sector &sector);
-    std::string get_flag_str(Track &track);
+    const std::string get_flag_str(const Flag &flag);
+    const std::string get_flag_str(const Sector &sector);
+    const std::string get_flag_str(const Track &track);
 }
 
 #endif
