@@ -8,7 +8,7 @@ namespace RCS
 
     }
 
-    void RaceController::create_track(uint8_t sector_count)
+    void RaceController::create_track(int sector_count)
     {
         m_track = Track::Track(sector_count);
     }

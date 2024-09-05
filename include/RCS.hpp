@@ -17,7 +17,7 @@ namespace RCS
 
     public:
         RaceController();
-        void create_track(uint8_t sector_count);
+        void create_track(int sector_count);
         Track::Track& get_track();
     };
 
