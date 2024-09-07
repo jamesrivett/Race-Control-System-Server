@@ -1,7 +1,6 @@
 #include "Track.hpp"
-#include <iostream>
 
-namespace Track
+namespace track
 {
 
     // Global
@@ -9,36 +8,18 @@ namespace Track
     {
         switch (flag)
         {
-            case Flag::red: return "red";
-            case Flag::yellow: return "yellow";
-            case Flag::orange: return "orange";
-            case Flag::green: return "green";
-            case Flag::black: return "black";
-            case Flag::white: return "white";
-            case Flag::chequered: return "chequered";
+            case Flag::kRed: return "red";
+            case Flag::kYellow: return "yellow";
+            case Flag::kOrange: return "orange";
+            case Flag::kGreen: return "green";
+            case Flag::kBlack: return "black";
+            case Flag::kWhite: return "white";
+            case Flag::kChequered: return "chequered";
             default: return "ERROR - No Flag";
         }
     }
 
-    const std::string get_flag_str(const Sector &sector)
-    {
-        return get_flag_str(sector.get_flag());
-    }
-
-    const std::string get_flag_str(const Track &track)
-    {
-        return get_flag_str(track.get_flag());
-    }
-
     // Sector
-    Sector::Sector(){}
-
-    Sector::Sector(int id)
-    {
-        m_id = id;
-        m_flag = Flag::red;
-    }
-
     void Sector::set_flag(Flag new_flag)
     {
         m_flag = new_flag;
@@ -49,11 +30,10 @@ namespace Track
         return m_flag;
     }
 
-    Track::Track(){}
-
+    // Track
     Track::Track(int sector_count)
     {
-        m_track_flag = Flag::red;
+        m_flag = Flag::kRed;
 
         for (int i = 1; i < sector_count; i++)
         {
@@ -68,6 +48,11 @@ namespace Track
 
     Flag Track::get_flag() const
     {
-        return m_track_flag;
+        return m_flag;
+    }
+
+    void Track::set_flag(Flag new_flag)
+    {
+        m_flag = new_flag;
     }
 }
