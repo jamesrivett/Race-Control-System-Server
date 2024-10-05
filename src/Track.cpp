@@ -40,7 +40,7 @@ namespace track
     {
         m_flag = Flag::kRed;
 
-        for (int i = 1; i < sector_count; i++)
+        for (int i = 0 ; i < sector_count; i++)
         {
             m_sectors.push_back(Sector(i));
         }
