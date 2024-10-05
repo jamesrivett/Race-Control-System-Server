@@ -25,10 +25,11 @@ int main()
     cout << "Start\n";
     std::vector<Sector> sectors = track.get_sectors();
     set_flag(sectors.at(2), Flag::kGreen);
+    set_flag(sectors.at(6), Flag::kGreen);
 
     for (int iter = 0; iter < sectors.size(); iter++)
     {
-        std::cout << "Sector " << get_flag_str<Sector>(sectors.at(iter)) << ";\n";
+        std::cout << "Sector " << sectors.at(iter).get_id() << " flag status: " << get_flag_str<Sector>(sectors.at(iter)) << ";\n";
     };
     cout << "End\n";
 
