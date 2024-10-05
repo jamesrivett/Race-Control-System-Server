@@ -29,6 +29,7 @@ namespace track
         explicit Sector(int id, Flag flag) : m_id(id), m_flag(flag) {}; // Not used at the moment
         void set_flag(Flag new_flag);
         Flag get_flag() const;
+        int get_id();
     };
 
     class Track

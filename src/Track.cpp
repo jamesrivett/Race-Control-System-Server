@@ -30,6 +30,11 @@ namespace track
         return m_flag;
     }
 
+    int Sector::get_id()
+    {
+        return m_id;
+    }
+
     // Track
     Track::Track(int sector_count)
     {
